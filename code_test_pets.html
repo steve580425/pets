@@ -1,0 +1,26 @@
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script src="sort.js"></script>
+
+<div id="app-5">
+  <pre>{{message}}</pre>
+  <button v-on:click="reverseMessage">format</button>
+</div>
+
+<script>
+const json_str = '[{"name":"Bob","gender":"Male","age":23,"pets":[{"name":"Garfield","type":"Cat"},{"name":"Fido","type":"Dog"}]},{"name":"Jennifer","gender":"Female","age":18,"pets":[{"name":"Garfield","type":"Cat"}]},{"name":"Steve","gender":"Male","age":45,"pets":null},{"name":"Fred","gender":"Male","age":40,"pets":[{"name":"Tom","type":"Cat"},{"name":"Max","type":"Cat"},{"name":"Sam","type":"Dog"},{"name":"Jim","type":"Cat"}]},{"name":"Samantha","gender":"Female","age":40,"pets":[{"name":"Tabby","type":"Cat"}]},{"name":"Alice","gender":"Female","age":64,"pets":[{"name":"Simba","type":"Cat"},{"name":"Nemo","type":"Fish"}]}]'
+
+const obj = JSON.parse(json_str)
+
+var app5 = new Vue({
+  el: '#app-5',
+  data: {
+    message: ''
+  },
+  methods: {
+    reverseMessage: function () {
+      this.message = parse(obj);
+    }
+  }
+})
+
+</script>
